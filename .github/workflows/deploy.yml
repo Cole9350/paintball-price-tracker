@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: '0 12 * * *'  # Runs every day at 12 PM UTC
 
 jobs:
   deploy:
@@ -13,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -31,10 +29,11 @@ jobs:
         zip -r ../lambda_package.zip .
 
     - name: Deploy to AWS Lambda
-      uses: aws-actions/aws-lambda-deploy@v1
+      uses: int128/deploy-lambda-action@v1
       with:
         function-name: "paintball-price-tracker"
-        zip-file: "lambda_package.zip"
+        zip-path: "lambda_package.zip"
+        aws-region: "us-east-1"  # Change to your AWS region
+      env:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: "us-east-1"  # Change to your AWS region
