@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment (ensure correct path)
+.venv/
+src/.venv/
+venv/
+
+# Environment variables (ensure it's ignored inside src/)
+.env
+src/.env
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
