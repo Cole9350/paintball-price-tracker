@@ -39,6 +39,9 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: "us-east-1"
 
+    - name: Wait for Lambda Update to Complete
+      run: sleep 10
+
     - name: Deploy to AWS Lambda
       uses: int128/deploy-lambda-action@v1
       with:
