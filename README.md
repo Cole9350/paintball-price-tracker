@@ -13,7 +13,7 @@ A Python-based web scraper that tracks the prices of paintball gear from various
 ```
 paintball-price-tracker/
 │-- src/                      # Main source code folder
-│   │-- scraper.py            # Main price scraper
+│   │-- lambda_function.py     # Main price scraper
 │   │-- requirements.txt      # Python dependencies
 │   │-- .env                  # Environment variables (ignored in Git)
 │   │-- .venv/                # Virtual environment (ignored in Git)
@@ -49,7 +49,7 @@ paintball-price-tracker/
 
 5. **Run the scraper manually**
    ```bash
-   python src/scraper.py
+   python src/lambda_function.py
    ```
 
 ## Deployment Plan

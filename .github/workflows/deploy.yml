@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r src/requirements.txt -t package/
-        cp src/scraper.py package/
+        cp src/lambda_function.py package/
 
     - name: Zip deployment package
       run: |
